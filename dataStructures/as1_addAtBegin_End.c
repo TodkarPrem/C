@@ -16,15 +16,9 @@ void addAtBegin(SLL **hptr)
 
 	SLL *ptr = (SLL *)malloc(sizeof(int));
 	ptr->num = num;
+	ptr->next = *hptr;
+	*hptr = ptr;
 
-	if(*hptr == 0) {
-		ptr->next = 0;
-		*hptr = ptr;
-	}
-	else {
-		ptr->next = *hptr;
-		*hptr = ptr;
-	}
 	return;
 }
 
