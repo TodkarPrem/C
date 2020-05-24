@@ -23,6 +23,8 @@ int main(int argc, char *argv[])
 		rewind(fp);
 	}
 
+	fclose(fd);
+	fclose(fp);
 	printf("Files copied successfully...\n");
 	return 0;
 }

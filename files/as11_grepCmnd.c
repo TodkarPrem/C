@@ -21,5 +21,6 @@ int main(int argc, char *argv[])
 		if (strstr(str, argv[2]))
 				printf("%s", str);
 
+	fclose(fp);
 	return 0;
 }

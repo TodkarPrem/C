@@ -29,6 +29,7 @@ int main(int argc, char *argv[])
 		}
 	}
 
+	fclose(fp);
 	printf(" %d %d %d %s\n", lines, wordCnt, size, argv[1]);
 	return 0;
 }
