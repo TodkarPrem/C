@@ -21,11 +21,12 @@ int main(int argc, char *argv[])
 	rewind(fp);
 	tmp = --i;
 
-	for (j = 0, i--; j < i; j++, i--) {
-		ch = str[i];
-		str[i] = str[j];
-		str[j] = ch;
-	}
+	for (j = 0, i--; j < i; j++, i--)
+		for (j = 0; j < i; j++, i--) {
+			ch = str[i];
+			str[i] = str[j];
+			str[j] = ch;
+		}
 
 	i = 0;
 	while (tmp--)
