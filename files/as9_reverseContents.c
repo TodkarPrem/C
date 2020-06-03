@@ -19,9 +19,15 @@ int main(int argc, char *argv[])
 
 	while ((str[i++] = fgetc(fp)) != EOF);
 	rewind(fp);
+<<<<<<< HEAD
 	tmp = --i;
 
 	for (j = 0, i--; j < i; j++, i--) {
+=======
+	tmp = i--;
+
+	for (j = 0; j < i; j++, i--) {
+>>>>>>> 5dd3146680c9dc33b51dc72c7da789f89f0384fc
 		ch = str[i];
 		str[i] = str[j];
 		str[j] = ch;
