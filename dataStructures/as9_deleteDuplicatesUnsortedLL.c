@@ -6,6 +6,7 @@ typedef struct singleLL {
 	struct singleLL *next;
 } SLL;
 
+
 void addNode(SLL **hptr)
 {
 	int num;
@@ -30,6 +31,7 @@ void addNode(SLL **hptr)
 	}
 }
 
+
 void print(SLL *ptr)
 {
 	while (ptr) {
@@ -39,17 +41,18 @@ void print(SLL *ptr)
 	printf("\n");
 }
 
+
 void deleteDuplicates(SLL *ptr)
 {
 	SLL *tmp1 = ptr, *tmp2, *dup;
 
 	while (tmp1->next) {
-		tmp2 = tmp1->next;
-		while (tmp2) {
-			if (tmp1->num == tmp2->num) {
+		tmp2 = tmp1;
+		while (tmp2->next) {
+			if (tmp1->num == tmp2->next->num) {
 				printf("Duplicate Number found.\n");
-				dup = tmp2;
-				tmp2 = tmp2->next;
+				dup = tmp2->next;
+				tmp2->next = tmp2->next->next;
 				free(dup);
 			}
 			else
