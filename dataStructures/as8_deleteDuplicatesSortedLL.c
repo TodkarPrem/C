@@ -55,9 +55,10 @@ void deleteDuplicates(SLL *ptr)
 			//printf("Duplicate Number found.\n");
 			tmp2 = tmp1->next;
 			tmp1->next = tmp1->next->next;
-			free(tmp2);
+			free(tmp2);		
 		}
-		tmp1 = tmp1->next;
+		else
+			tmp1 = tmp1->next;
 	}
 }
 
